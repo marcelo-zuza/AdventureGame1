@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1941af12f91d04aa4157c1a452d960, type: 3}
+  m_Name: Ak47Weapon
+  m_EditorClassIdentifier: Assembly-CSharp::NewWeapon
+  weaponName: AK47
+  maxAmmo: 32
+  currentAmmo: 32
+  reserveAmmo: 50
+  reloadTime: 0
+  fireRate: 0.5
+  fireSound: {fileID: 8300000, guid: 2b8a2d9d1af1e3f4f952e16be7ffad9c, type: 3}
+  weaponPrefab: {fileID: 7189128598308872739, guid: d929624e60dfe58499c29eb2d88e0961, type: 3}

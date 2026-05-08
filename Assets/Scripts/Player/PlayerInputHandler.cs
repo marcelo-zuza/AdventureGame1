@@ -6,6 +6,7 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private ShootingSystem shootingSystem;
     [SerializeField] private RealoadSystem realoadSystem;
     [SerializeField] private WeaponManager weaponManager;
+    //[SerializeField] private WeaponAnimationController weaponAnimationController;
 
     [SerializeField] private InputActionAsset inputActionAsset;
     private InputAction fireAction;

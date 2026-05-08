@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewWeapon
   weaponName: Pistol
   maxAmmo: 12
-  currentAmmo: 12
-  reserveAmmo: 50
+  currentAmmo: 0
+  reserveAmmo: 1000
   reloadTime: 0
   fireRate: 0
   fireSound: {fileID: 8300000, guid: 2b8a2d9d1af1e3f4f952e16be7ffad9c, type: 3}

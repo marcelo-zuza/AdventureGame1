@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7791318276414355993}
   - component: {fileID: 3327860402029950580}
   - component: {fileID: 814612487373130175}
+  - component: {fileID: 2515371337199921102}
   m_Layer: 0
   m_Name: M1911
   m_TagString: Untagged
@@ -95,6 +96,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2515371337199921102
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960068276460796986}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2558cb4d9b46d0d409d85aecab5b5de4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1906592059198664844
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,7 +549,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5240050138922205162}
-  - component: {fileID: 7622544043315745268}
+  - component: {fileID: 2291405859460425065}
   m_Layer: 0
   m_Name: Pistol
   m_TagString: Gun
@@ -552,7 +575,7 @@ Transform:
   - {fileID: 1005326169819682133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -4.602, y: 2.881, z: -0.231}
---- !u!95 &7622544043315745268
+--- !u!95 &2291405859460425065
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

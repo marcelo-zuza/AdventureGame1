@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShootingSystem : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject sparksOfImpact;
+    [SerializeField] private InputAction previousWeaponAction;
+    [SerializeField] private WeaponAnimationController weaponAnimationController;
 
     private float nextFireTime = 0f; // fire rate controller time
 
@@ -38,6 +41,8 @@ public class ShootingSystem : MonoBehaviour
             {
                 Debug.Log("Missed");
             }
+
+            weaponAnimationController.PlayShootAnimation();
 
             nextFireTime = Time.time + (1f / weapon.fireRate);
                 

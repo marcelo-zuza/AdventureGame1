@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuzzleFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 8542131790424312022, guid: 163a7c7e1519e1a4c8d798e7c6ba7e00, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8542131790424806646, guid: 163a7c7e1519e1a4c8d798e7c6ba7e00, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0047000004

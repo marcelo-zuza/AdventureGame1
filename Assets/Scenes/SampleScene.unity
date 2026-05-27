@@ -3086,6 +3086,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb36902a2157479488754154706a0949, type: 2}
   weaponPosition: {fileID: 19459368}
   weaponAnimationController: {fileID: 19459369}
+  currentAmmoDisplay: {fileID: 1093930754}
+  reserveAmmoDisplay: {fileID: 970841425}
 --- !u!114 &1289118309
 MonoBehaviour:
   m_ObjectHideFlags: 0

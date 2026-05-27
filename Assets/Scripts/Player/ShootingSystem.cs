@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,8 +16,10 @@ public class ShootingSystem : MonoBehaviour
     private NewWeapon weapon;
 
 
+
     // Muzzle Flash Effect
     private float nextFireTime = 0f; // fire rate controller time
+
 
     public void Shoot()
     {
@@ -114,6 +117,5 @@ public class ShootingSystem : MonoBehaviour
             yield return null;
         }
     }
-
 
 }

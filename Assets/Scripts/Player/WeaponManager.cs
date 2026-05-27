@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -7,12 +8,19 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] private WeaponAnimationController weaponAnimationController;
     private int currentWeaponIndex = 0;
     private GameObject currentWeaponGameObject;
+    // UI
+    [SerializeField] private TextMeshProUGUI currentAmmoDisplay;
+    [SerializeField] private TextMeshProUGUI reserveAmmoDisplay;
 
     void Start()
     {
         EquipWeapon(currentWeaponIndex);
     }
 
+    private void Update()
+    {
+        UpdateAmmoDisplay();
+    }
 
     public void EquipWeapon(int index)
     {
@@ -64,5 +72,19 @@ public class WeaponManager : MonoBehaviour
     public NewWeapon GetCurrentWeapon()
     {
         return weapons[currentWeaponIndex];
+        
+    }
+
+    void UpdateAmmoDisplay()
+    {
+        if(currentAmmoDisplay != null)
+        {
+            currentAmmoDisplay.text = weapons[currentWeaponIndex].currentAmmo.ToString() + " / ";
+        }
+
+        if(reserveAmmoDisplay != null)
+        {
+            reserveAmmoDisplay.text = weapons[currentWeaponIndex].reserveAmmo.ToString();
+        }
     }
 }

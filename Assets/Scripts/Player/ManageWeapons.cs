@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -50,6 +51,8 @@ public class ManageWeapons : MonoBehaviour
     private int currentWeapon;
 
     //UI
+    [SerializeField] private TextMeshProUGUI currentAmmoDisplay;
+    [SerializeField] private TextMeshProUGUI reserveAmmoDisplay;
     // Reloading System
     bool canShoot = true;
     private bool isShooting = false; // Control variable to ensure shooting animation runs once
@@ -141,6 +144,8 @@ public class ManageWeapons : MonoBehaviour
 
         // Shoot & Reload
         ReadInputs();
+
+        UpdateAmmoDisplay();
 
 
     }
@@ -292,5 +297,18 @@ public class ManageWeapons : MonoBehaviour
     void UpdateAnimator()
     {
         activeAnimator = GetComponentInChildren<Animator>();
+    }
+
+    void UpdateAmmoDisplay()
+    {
+        if(currentAmmoDisplay != null)
+        {
+            currentAmmoDisplay.text = ammos[currentWeapon].ToString() + " / ";
+        }
+
+        if(reserveAmmoDisplay != null)
+        {
+            reserveAmmoDisplay.text = reserveAmmos[currentWeapon].ToString();
+        }
     }
 }

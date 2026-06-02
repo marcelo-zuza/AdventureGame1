@@ -49,11 +49,21 @@ public class ShootingSystem : MonoBehaviour
                 {
                     Instantiate(sparksOfImpact, hit.point, Quaternion.LookRotation(hit.normal));
                 }
+                if(hit.collider.CompareTag("Zombie"))
+                {
+                    ZombieHealth zombieHealth = hit.collider.GetComponent<ZombieHealth>();
+                    if (zombieHealth != null)
+                    {
+                        zombieHealth.TakeDamage(weapon.damage);
+                    }
+                }
+
             }
             else
             {
                 Debug.Log("Missed");
             }
+            
 
             weaponAnimationController.PlayShootAnimation();
 

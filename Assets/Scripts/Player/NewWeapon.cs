@@ -9,6 +9,7 @@ public class NewWeapon : ScriptableObject
     public int reserveAmmo;
     public float reloadTime;
     public float fireRate;
+    public float damage;
     public AudioClip fireSound;
     public GameObject weaponPrefab;
     public GameObject muzzleFlashPrefab;

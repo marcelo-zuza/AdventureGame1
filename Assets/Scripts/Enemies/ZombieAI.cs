@@ -10,6 +10,8 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private float attackDistance = 2f;
     [SerializeField] private float attackIntervals = 1.5f;
     private float cronometroAttack;
+    // player variables
+    public Movement playerMovement;
 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -84,6 +86,8 @@ public class ZombieAI : MonoBehaviour
             if(cronometroAttack <= 0)
             {
                 Attack();
+                navMeshAgent.isStopped = true;
+                navMeshAgent.velocity = Vector3.zero;
             }
         }else
         {

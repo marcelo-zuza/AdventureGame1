@@ -76,5 +76,6 @@ public class ZombieHealth : MonoBehaviour
         if (zombieCollider != null) zombieCollider.enabled = false;
 
         if (animator != null) animator.SetTrigger("Die");
+        Destroy(gameObject, 10f);
     }
 }

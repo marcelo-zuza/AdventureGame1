@@ -2927,6 +2927,7 @@ MonoBehaviour:
     m_Flags: 0
   weaponAnimationController: {fileID: 19459369}
   muzzleFlashDuration: 0.1
+  blood: {fileID: 6408901513517776949, guid: 9d0128abbbff8284db5f1722eddd933d, type: 3}
 --- !u!114 &1289118308
 MonoBehaviour:
   m_ObjectHideFlags: 0

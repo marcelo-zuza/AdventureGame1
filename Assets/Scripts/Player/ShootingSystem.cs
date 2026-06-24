@@ -14,6 +14,8 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private WeaponAnimationController weaponAnimationController;
     [SerializeField] private float muzzleFlashDuration = 0.5f;
     private NewWeapon weapon;
+    // Blood on zombie
+    [SerializeField] private GameObject blood;
 
 
 
@@ -55,6 +57,13 @@ public class ShootingSystem : MonoBehaviour
                     if (zombieHealth != null)
                     {
                         zombieHealth.TakeDamage(weapon.damage);
+                        if(blood != null)
+                        {
+                            Quaternion bloodRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                            GameObject bloodFlush = Instantiate(blood, hit.point, bloodRotation);
+                            bloodFlush.transform.SetParent(hit.transform);
+                            Destroy(bloodFlush, 0.5f);
+                        }
                     }
                 }
 

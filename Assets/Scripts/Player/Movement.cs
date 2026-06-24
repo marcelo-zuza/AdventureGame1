@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
 
+    public bool beingAttacked = false;
+
     private void OnEnable()
     {
         if(moveActionAsset != null)
@@ -50,6 +52,16 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        if(!beingAttacked) playerMovement();
+    }
+
+    void Jump()
+    {
+        moveDirection.y = Mathf.Sqrt(2 * gravity * jumpHeight);
+    }
+
+    void playerMovement()
+    {
         if (moveAction == null) return;
 
         Vector2 moveInput = moveAction.ReadValue<Vector2>();
@@ -75,10 +87,5 @@ public class Movement : MonoBehaviour
         }
 
         controller.Move(moveDirection * Time.deltaTime);
-    }
-
-    void Jump()
-    {
-        moveDirection.y = Mathf.Sqrt(2 * gravity * jumpHeight);
     }
 }

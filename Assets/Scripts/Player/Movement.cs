@@ -16,7 +16,7 @@ public class Movement : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
 
-    public bool beingAttacked = false;
+    //public bool beingAttacked = false;
 
     private void OnEnable()
     {
@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if(!beingAttacked) playerMovement();
+        playerMovement();
     }
 
     void Jump()

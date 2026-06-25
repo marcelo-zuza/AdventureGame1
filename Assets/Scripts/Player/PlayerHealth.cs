@@ -5,6 +5,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public float playerHealth = 100;
     public TextMeshProUGUI healthText;
+    public GameObject damageEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

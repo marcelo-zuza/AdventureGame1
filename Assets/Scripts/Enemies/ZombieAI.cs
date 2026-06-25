@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -11,17 +12,22 @@ public class ZombieAI : MonoBehaviour
     [SerializeField] private float attackIntervals = 1.5f;
     private float cronometroAttack;
     // player variables
-    public Movement playerMovement;
-
+    private PlayerHealth playerHealth;
+    private GameObject player;
     
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerHealth>();
+        if (playerHealth.damageEffect != null) playerHealth.damageEffect.gameObject.SetActive(false);
 
-        if(player != null)
+        if (player != null)
         {
             playerTransform = player.transform;
         }else
@@ -86,6 +92,7 @@ public class ZombieAI : MonoBehaviour
             if(cronometroAttack <= 0)
             {
                 Attack();
+                StartCoroutine(DamagePlayer());
                 navMeshAgent.isStopped = true;
                 navMeshAgent.velocity = Vector3.zero;
             }
@@ -114,6 +121,13 @@ public class ZombieAI : MonoBehaviour
         {
             animator.SetTrigger("Attack");
         }
-        
+    }
+
+    IEnumerator DamagePlayer()
+    {
+        playerHealth.playerHealth -= 5f;
+        if (playerHealth.damageEffect != null) playerHealth.damageEffect.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        if (playerHealth.damageEffect != null) playerHealth.damageEffect.gameObject.SetActive(false);
     }
 }

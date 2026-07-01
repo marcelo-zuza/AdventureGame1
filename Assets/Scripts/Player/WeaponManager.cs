@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -41,7 +42,18 @@ public class WeaponManager : MonoBehaviour
 
         Debug.Log($"Equiéd Weapon: {weapons[index].weaponName}");
         // refresh getting animation controller
-        weaponAnimationController.OnWeaponChanged();
+        //weaponAnimationController.OnWeaponChanged();
+        StartCoroutine(RefreshAnimatorAfterDelay());
+    }
+
+    private IEnumerator RefreshAnimatorAfterDelay()
+    {
+        yield return null;
+
+        if(weaponAnimationController != null)
+        {
+            weaponAnimationController.OnWeaponChanged();
+        }
     }
 
     public void NextWeapon()

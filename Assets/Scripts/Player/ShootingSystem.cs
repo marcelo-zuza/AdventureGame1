@@ -16,15 +16,27 @@ public class ShootingSystem : MonoBehaviour
     private NewWeapon weapon;
     // Blood on zombie
     [SerializeField] private GameObject blood;
+    private RealoadSystem reloadSystem;
+
 
 
 
     // Muzzle Flash Effect
     private float nextFireTime = 0f; // fire rate controller time
 
+    private void Start()
+    {
+        reloadSystem = GetComponent<RealoadSystem>();
+    }
 
     public void Shoot()
     {
+
+        if(reloadSystem != null)
+        {
+            if (reloadSystem.isReloading) return;
+        }
+
         weapon = weaponManager.GetCurrentWeapon();
 
         if (Time.time < nextFireTime)
@@ -90,19 +102,7 @@ public class ShootingSystem : MonoBehaviour
     }
     private IEnumerator ShowMuzzleFlash()
     {
-        //if (weapon != null && weapon.muzzleFlashPrefab != null && weapon.muzzleFlashPrefabPosition != null)
-        //{
-        //    Debug.Log("Instantiating Muzzle Flash...");
-        //    GameObject muzzleFlash = Instantiate(weapon.muzzleFlashPrefab, weapon.muzzleFlashPrefabPosition.position, weapon.muzzleFlashPrefabPosition.rotation);
 
-        //    // Log the instantiated object for debugging
-        //    Debug.Log($"Muzzle Flash instantiated at position: {weapon.muzzleFlashPrefabPosition.position}");
-
-        //    yield return new WaitForSeconds(muzzleFlashDuration);
-
-        //    Debug.Log("Destroying Muzzle Flash...");
-        //    Destroy(muzzleFlash);
-        //}
         if(weapon != null)
         {
             if(weapon.muzzleFlashPrefab != null)

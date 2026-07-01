@@ -12,6 +12,8 @@ public class WeaponAnimationController : MonoBehaviour
         StartCoroutine(DelayedInitialization());
     }
 
+
+
     public void FindAnimator()
     {
         weaponAnimator = GetComponentInChildren<Animator>();
@@ -60,6 +62,9 @@ public class WeaponAnimationController : MonoBehaviour
         if(weaponAnimator != null)
         {
             weaponAnimator.SetTrigger("Reload");
+        }else
+        {
+            Debug.LogWarning("Weapon animator is null");
         }
     }
 

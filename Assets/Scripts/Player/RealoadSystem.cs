@@ -10,6 +10,11 @@ public class RealoadSystem : MonoBehaviour
 
     private void Start()
     {
+        
+    }
+
+    private void Update()
+    {
         weaponAnimationController = GetComponent<WeaponAnimationController>();
     }
 
@@ -45,7 +50,14 @@ public class RealoadSystem : MonoBehaviour
         }
 
         isReloading = true;
-        weaponAnimationController?.PlayReloadAnimation();
+        if(weaponAnimationController != null)
+        {
+            weaponAnimationController.PlayReloadAnimation();
+        }else
+        {
+            Debug.LogWarning("ANIMATOR CONTROLLER NOT FOUND");
+        }
+        
         StartCoroutine(PerformReload(weapon, ammoToRealod));
     }
 

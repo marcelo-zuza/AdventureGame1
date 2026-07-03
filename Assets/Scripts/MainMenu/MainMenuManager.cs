@@ -36,4 +36,10 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+
+    public void BackToMainMenu()
+    {
+        creditsPanel.SetActive(false);
+        buttonsPanel.SetActive(true);
+    }
 }

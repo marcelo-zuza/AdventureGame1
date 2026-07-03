@@ -11,15 +11,21 @@ public class DarknessTrigger : MonoBehaviour
 
     private bool isDarkening = false;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Player") && !isDarkening)
-        {
-            Debug.Log("Darkness trigger activated");
-            StartCoroutine(GetDark());
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.CompareTag("Player") && !isDarkening)
+    //    {
+    //        Debug.Log("Darkness trigger activated");
+    //        StartCoroutine(GetDark());
 
-        }
+    //    }
+    //}
+
+    void Start()
+    {
+        StartCoroutine(GetDark());
     }
+
 
     IEnumerator GetDark()
     {

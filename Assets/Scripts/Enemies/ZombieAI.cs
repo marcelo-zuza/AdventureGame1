@@ -10,6 +10,10 @@ public class ZombieAI : MonoBehaviour
     [Header("Attack Configuration")]
     [SerializeField] private float attackDistance = 2f;
     [SerializeField] private float attackIntervals = 1.5f;
+    [Header("Detection Configuration")]
+    [SerializeField] private float detectionRange = 15f;
+    [SerializeField] private float stopChasingDistance = 15f;
+    private bool playerDetected = false;
     private float cronometroAttack;
     // player variables
     private PlayerHealth playerHealth;
@@ -44,9 +48,35 @@ public class ZombieAI : MonoBehaviour
             SearchPlayer();
         }
 
-        ChasePlayer();
+        CheckPlayerDetection();
+
+        if(playerDetected)
+        {
+            ChasePlayer();
+        }else
+        {
+            StopChasing();
+        }
+
         AnimatorUpdater();   
     }
+
+    void CheckPlayerDetection()
+    {
+        if(playerTransform != null)
+        {
+            float distanceFromPlayer = Vector3.Distance(transform.position, playerTransform.position);
+
+            if(distanceFromPlayer <= detectionRange)
+            {
+                playerDetected = true;
+            }else if(distanceFromPlayer > stopChasingDistance)
+            {
+                playerDetected = false;
+            }
+        }
+    }
+
     void ChasePlayer()
     {
         if (playerTransform != null)
@@ -64,6 +94,15 @@ public class ZombieAI : MonoBehaviour
         }
     }
 
+    void StopChasing()
+    {
+        if(navMeshAgent.enabled)
+        {
+            navMeshAgent.isStopped = true;
+            navMeshAgent.velocity = Vector3.zero;
+        }
+    }
+
     void AnimatorUpdater()
     {
         if(animator != null && navMeshAgent != null)
@@ -71,6 +110,8 @@ public class ZombieAI : MonoBehaviour
             float currentSpeed = navMeshAgent.velocity.magnitude;
             animator.SetFloat("Speed", currentSpeed);
         }
+
+        if (playerTransform == null) return;
 
         float distanceFromPlayer = Vector3.Distance(transform.position, playerTransform.position);
 
@@ -98,7 +139,7 @@ public class ZombieAI : MonoBehaviour
             }
         }else
         {
-            if (!isAttacking)
+            if (!isAttacking && playerDetected)
             {
                 navMeshAgent.isStopped = false;
                 ChasePlayer();

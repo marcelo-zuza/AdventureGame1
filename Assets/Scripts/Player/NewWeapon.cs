@@ -11,6 +11,7 @@ public class NewWeapon : ScriptableObject
     public float fireRate;
     public float damage;
     public AudioClip fireSound;
+    public AudioClip reloadSound;
     public GameObject weaponPrefab;
     public GameObject muzzleFlashPrefab;
     public Transform muzzleFlashPrefabPosition;

@@ -8,9 +8,12 @@ public class RealoadSystem : MonoBehaviour
     public float reloadingTime = 0.5f;
     public bool isReloading = false;
 
+    private AudioSource audioSource;
+
+
     private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -63,6 +66,7 @@ public class RealoadSystem : MonoBehaviour
 
     private IEnumerator PerformReload(NewWeapon weapon, int ammoToReload)
     {
+        if(weapon.reloadSound != null) audioSource.PlayOneShot(weapon.reloadSound);
         yield return new WaitForSeconds(reloadingTime);
         weapon.currentAmmo += ammoToReload;
         weapon.reserveAmmo -= ammoToReload;

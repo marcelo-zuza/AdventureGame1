@@ -20,6 +20,7 @@ MonoBehaviour:
   fireRate: 30
   damage: 30
   fireSound: {fileID: 8300000, guid: 8998a27d93090ab4ab4aaf514b12673d, type: 3}
+  reloadSound: {fileID: 8300000, guid: 8da2b39aea73bb44fa58cd59c6e2e0f8, type: 3}
   weaponPrefab: {fileID: 7189128598308872739, guid: d929624e60dfe58499c29eb2d88e0961, type: 3}
   muzzleFlashPrefab: {fileID: 0}
   muzzleFlashPrefabPosition: {fileID: 0}

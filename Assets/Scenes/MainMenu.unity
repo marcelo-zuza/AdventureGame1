@@ -1146,6 +1146,7 @@ RectTransform:
   - {fileID: 820393802}
   - {fileID: 1756587416}
   - {fileID: 933717005}
+  - {fileID: 418822123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1512,7 +1513,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1782123582}
+    m_TransformParent: {fileID: 282227174}
     m_Modifications:
     - target: {fileID: 259655679558613222, guid: 7fa97582ffb36fe4aab3c4af6823db0c, type: 3}
       propertyPath: m_CastShadows
@@ -1544,7 +1545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5240050138922205162, guid: 7fa97582ffb36fe4aab3c4af6823db0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -527
+      value: -668
       objectReference: {fileID: 0}
     - target: {fileID: 5240050138922205162, guid: 7fa97582ffb36fe4aab3c4af6823db0c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2029,9 +2030,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "GAME DESIGNER - MARCELO ZUZA \r\nGAME PROGRAMMER - MARCELO ZUZA\n\nASSETS
-    FROM UNITY ASSET STORE:\nFree Blood VFX URP - by Vefects\nLow Poly FPS Weapons
-    Lite - by JustCreate\nLow Poly Weapons VOL.1 - by Simon Mercuzot\nWar FX - by
-    Jean Moreno\nHorror Survival Music Pack - by ThiSound\n\n"
+    FROM UNITY ASSET STORE:\nPolygonal's Low-Poly Particle Pack - by Polygonal Stuff\nLow
+    Poly FPS Weapons Lite - by JustCreate\nLow Poly Weapons VOL.1 - by Simon Mercuzot\nWar
+    FX - by Jean Moreno\nHorror Survival Music Pack - by ThiSound\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5216,7 +5217,6 @@ RectTransform:
   m_Children:
   - {fileID: 1771237682}
   - {fileID: 398466673}
-  - {fileID: 418822123}
   m_Father: {fileID: 282227174}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

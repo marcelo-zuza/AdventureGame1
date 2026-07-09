@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: InheritVelocityModule.m_Curve.scalar
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8044222710971025302, guid: 4f68d22acc200bc41b6b6c4a62688e0d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8086314461076744572, guid: 4f68d22acc200bc41b6b6c4a62688e0d, type: 3}
       propertyPath: m_Name
       value: Blood

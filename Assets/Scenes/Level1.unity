@@ -4057,7 +4057,7 @@ MonoBehaviour:
     m_Flags: 0
   weaponAnimationController: {fileID: 19459369}
   muzzleFlashDuration: 0.1
-  blood: {fileID: 6408901513517776949, guid: 9d0128abbbff8284db5f1722eddd933d, type: 3}
+  blood: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
 --- !u!114 &1289118308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4513,7 +4513,7 @@ RectTransform:
   m_GameObject: {fileID: 1436223919}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 833129875}
@@ -6605,7 +6605,7 @@ RectTransform:
   m_GameObject: {fileID: 2082783552}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 282227174}

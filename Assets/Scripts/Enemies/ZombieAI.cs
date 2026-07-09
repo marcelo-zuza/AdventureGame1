@@ -33,7 +33,7 @@ public class ZombieAI : MonoBehaviour
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
-        if (playerHealth.damageEffect != null) playerHealth.damageEffect.gameObject.SetActive(false);
+        if (playerHealth.damageEffect != null) playerHealth.damageEffect.SetActive(false);
 
         if (player != null)
         {

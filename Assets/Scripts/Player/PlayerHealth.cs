@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         deathPanel.SetActive(false);
+        damageEffect.SetActive(false);
     }
 
     // Update is called once per frame

@@ -18,6 +18,9 @@ public class ZombieAI : MonoBehaviour
     // player variables
     private PlayerHealth playerHealth;
     private GameObject player;
+    // audio
+    private AudioSource audioSource;
+    public AudioClip zombieVoice;
     
 
 
@@ -26,6 +29,7 @@ public class ZombieAI : MonoBehaviour
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
@@ -83,6 +87,20 @@ public class ZombieAI : MonoBehaviour
         {
             navMeshAgent.SetDestination(playerTransform.position);
         }
+        if(audioSource != null)
+        {
+            if(zombieVoice != null)
+            {
+                audioSource.PlayOneShot(zombieVoice);
+            }else
+            {
+                Debug.LogWarning("Zombie voice not found");
+            }
+
+        }else
+        {
+            Debug.LogWarning("Audio source not found");
+        }
     }
 
     void SearchPlayer()
@@ -100,6 +118,20 @@ public class ZombieAI : MonoBehaviour
         {
             navMeshAgent.isStopped = true;
             navMeshAgent.velocity = Vector3.zero;
+        }
+
+        if(audioSource != null)
+        {
+            if(zombieVoice != null)
+            {
+                audioSource.Stop();
+            }else
+            {
+                Debug.LogWarning("Zombie voice not found");
+            }
+        }else
+        {
+            Debug.LogWarning("Audio source not found");
         }
     }
 

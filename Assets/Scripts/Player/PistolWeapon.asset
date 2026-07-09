@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewWeapon
   weaponName: Pistol
   maxAmmo: 12
-  currentAmmo: 11
-  reserveAmmo: 754
+  currentAmmo: 12
+  reserveAmmo: 100
   reloadTime: 0
   fireRate: 5
   damage: 20

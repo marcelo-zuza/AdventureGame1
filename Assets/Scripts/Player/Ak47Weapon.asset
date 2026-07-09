@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewWeapon
   weaponName: AK47
   maxAmmo: 32
-  currentAmmo: 15
-  reserveAmmo: 263
+  currentAmmo: 32
+  reserveAmmo: 60
   reloadTime: 0
   fireRate: 30
   damage: 30

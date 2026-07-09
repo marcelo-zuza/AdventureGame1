@@ -13,12 +13,17 @@ public class ZombieHealth : MonoBehaviour
     private ZombieAI zombieAI;
     private bool isDead = false;
 
+    // audio
+    AudioSource audioSource;
+    public AudioClip zombieDiesVoice;
+
     void Start()
     {
         currentHP = maxHP;
         animator = GetComponent<Animator>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         zombieAI = GetComponent<ZombieAI>(); ;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +81,15 @@ public class ZombieHealth : MonoBehaviour
         if (zombieCollider != null) zombieCollider.enabled = false;
 
         if (animator != null) animator.SetTrigger("Die");
+        
+        if(audioSource != null)
+        {
+            if(zombieDiesVoice != null)
+            {
+                audioSource.PlayOneShot(zombieDiesVoice);
+            }
+        }
+
         Destroy(gameObject, 10f);
     }
 }

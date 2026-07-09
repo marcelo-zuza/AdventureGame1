@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
     private InputAction nextWeaponAction;
     private InputAction previousWeaponAction;
 
+    PlayerHealth playerHealth;
+
     private void OnEnable()
     {
         fireAction = inputActionAsset.FindAction("Shoot", true);
@@ -35,8 +37,11 @@ public class PlayerInputHandler : MonoBehaviour
         previousWeaponAction.Disable();
     }
 
-    
 
+    private void Start()
+    {
+        playerHealth = GetComponent<PlayerHealth>();
+    }
 
     void Update()
     {
@@ -59,5 +64,14 @@ public class PlayerInputHandler : MonoBehaviour
         {
             weaponManager.PreviousWeapon();
         }
+
+        if(playerHealth != null)
+        {
+            if(playerHealth.isDead)
+            {
+                if (fireAction.triggered) playerHealth.RestartGame();
+            }
+        }
+
     }
 }

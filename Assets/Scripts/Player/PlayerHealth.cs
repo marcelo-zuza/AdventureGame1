@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     public float playerHealth = 100;
     public TextMeshProUGUI healthText;
     public GameObject damageEffect;
-    private bool isDead = false;
+    public bool isDead = false;
     public GameObject deathPanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,7 +25,6 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
         if(healthText != null) healthText.text = playerHealth.ToString();
-        RestartGame();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,21 +32,22 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("Water")) Die();
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
-        if(isDead && Input.GetKeyDown(KeyCode.Return))
-        {
-            SceneManager.LoadScene(0);
-        }
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
     }
 
     
 
     public void Die()
     {
+        if (isDead) return;
+
         Debug.Log("You're Dead");
         Time.timeScale = 0;
         if (deathPanel != null) deathPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
         isDead = true;
 
     }

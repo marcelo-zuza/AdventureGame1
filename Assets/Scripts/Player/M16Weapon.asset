@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewWeapon
   weaponName: M16
   maxAmmo: 50
-  currentAmmo: 44
-  reserveAmmo: 100
+  currentAmmo: 50
+  reserveAmmo: 20
   reloadTime: 0
   fireRate: 10
   damage: 40

@@ -1,6 +1,8 @@
 ﻿# Running to The Lighthouse
 
-Running to The Lighthouse is a 3D first-person shooter game built in Unity 6. The player must survive waves of zombies, manage ammunition, and reach the lighthouse before night falls.
+Running to The Lighthouse is a 3D first-person shooter game built in Unity 6. The player must survive waves of zombies, manage ammunition, and reach the lighthouse before night falls. 
+Play for free:
+https://marcelozuza.itch.io/runningtothelighthouse
 
 ## Overview
 
